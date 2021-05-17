@@ -1,5 +1,5 @@
 import React from "react";
-import { NavBar } from "./index";
+import { NavBar, Quote } from "./index";
 import { Switch, Route, Redirect } from "react-router-dom";
 
 const Main = () => {
@@ -11,9 +11,9 @@ const Main = () => {
       <NavBar />
       <Switch>
         <Route
-          path="/movies/:movieId"
+          path="/"
           render={() => {
-            return //component to render;
+            return <Quote />
           }}
         />
         <Route
@@ -22,7 +22,7 @@ const Main = () => {
             return //component to render;
           }}
         />
-        <Redirect to="/movies" />
+        <Redirect to="/" />
       </Switch>
     </div>
   );
