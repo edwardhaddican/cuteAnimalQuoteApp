@@ -1,6 +1,9 @@
 import React from 'react'
+import axios from 'axios'
 
-const CuteAnimals = (props) => {
+const CuteAnimals = ({allAnimalPics, setAllAnimalPics}) => {
+
+
 
 
   return(

@@ -1,13 +1,12 @@
 {
-  "name": "year_one_project",
+  "name": "animal-quote-app",
   "version": "1.0.0",
-  "description": "An small web application for viewing movie details and voting for your favorites.",
+  "description": "An small pwa for seeing cute animals and inspirational quotes",
   "main": "index.js",
   "scripts": {
     "start-dev": "NODE_ENV='development' react-scripts start",
-    "start": "NODE_ENV='production' npm run build & NODE_ENV='production' npm run start-server",
-    "start-server": "nodemon server -e html,js,scss --ignore public --ignore src",
-    "build": "react-scripts build && mv build ./server/public"
+    "start": "NODE_ENV='production' npm run build",
+    "build": "react-scripts build"
   },
   "keywords": [],
   "author": "",

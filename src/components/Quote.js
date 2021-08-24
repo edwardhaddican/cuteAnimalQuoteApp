@@ -38,8 +38,6 @@ const Quote = (props) => {
           <h1>Loading</h1>
         )}
 
-        <CuteAnimals />
-
         <button onClick={randomNumberGenerator}>Click Me</button>
         <SearchBar quoteArray={quoteArray} />
       </div>
