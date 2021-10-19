@@ -7,23 +7,13 @@ body {
 .main_container {
   width: 80%;
   margin: 0 auto;
+  background-color: lightblue;
 }
 .main_title {
   color: black;
   text-align: center;
 }
-/* NavBar*/
 
-.nav_bar_container {
-  border: 1px solid black;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  background-color: #0353a4;
-}
-.nav_item {
-  color: white;
-  text-decoration: none;
-}
 .searchbar_container {
   border: 1px solid black;
   background-color: white;
@@ -31,6 +21,18 @@ body {
 
 .header {
   margin-left: 1rem;
+}
+
+/* Cute Animals*/
+.cute-animals-main-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Quotes*/
+.quote-main-container {
+  display: flex;
+  justify-content: center;
 }
 
 /* SearchBar*/
@@ -52,52 +54,10 @@ body {
   cursor: pointer;
 }
 
-/* All Movies*/
-.allMovies_Main_Container {
-}
-.movie_search_results_container {
-  border: 1px solid black;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-  padding: 0.5rem;
-  background-color: white;
-}
+/* Cute Animals */
 
-.movie_container {
-  border: 1px solid black;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  padding: 0.5rem;
-  box-shadow: 5px 5px 5px grey;
-}
-
-.movie_item {
-}
-.movie_link {
-  color: black;
-  text-decoration: none;
-}
-
-/* Single Movie*/
-
-.single_movie_container {
-  border: 1px solid black;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-  background-color: white;
-}
-
-.single_movie_label {
-  font-weight: bold;
-}
-
-/* Voting*/
-.voting-main-container button {
-  cursor: pointer;
-}
-.thumbs_up {
-  margin-right: 0.5rem;
+.imageTag {
+  height: 400px;
 }
 
 /* */
