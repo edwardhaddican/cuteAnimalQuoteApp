@@ -1,16 +1,18 @@
-import React from 'react'
-import axios from 'axios'
+import React, {useState} from 'react'
 
-const CuteAnimals = ({allAnimalPics, setAllAnimalPics}) => {
-
-
-
+const CuteAnimals = ({allAnimalPics, randomAnimalPicNum}) => {
+  const [filteredAnimals, setFilteredAnimals] = useState('')
+  const [currentCategory, setCurrentCategory] = useState('')
 
   return(
     <div className="nav_bar_container">
       <div className="link_container">
         <div>
-          <h1>CuteAnimals go here</h1>
+          {allAnimalPics.length > 0 ? (
+          <img className="imageTag" src={allAnimalPics[randomAnimalPicNum].imagePath} alt='cute animal pictures'/>
+        ) : (
+          <h1>Loading</h1>
+        )}
         </div>
       </div>
     </div>
