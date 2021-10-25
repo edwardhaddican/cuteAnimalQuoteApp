@@ -13,9 +13,6 @@ const Quote = ({quoteArray, randomQuoteNum}) => {
         ) : (
           <h1>Loading</h1>
         )}
-
-        {/* <button onClick={randomNumberGenerator}>Click Me</button> */}
-        {/* <SearchBar quoteArray={quoteArray} /> */}
       </div>
     </div>
   );

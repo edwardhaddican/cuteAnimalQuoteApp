@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-import { NavBar, Quote, CuteAnimals } from "./index";
+import { NavBar, Quote, CuteAnimals, SideBar } from "./index";
 import { Switch, Route, Redirect } from "react-router-dom";
 
 const Main = () => {
@@ -20,8 +20,6 @@ const Main = () => {
       const { data } = await axios.get(
         "https://cute-animals-api.herokuapp.com/api/animals"
       );
-      // const data = await response.json()
-      console.log(data, "fetch aminals");
       setAllAnimalPics(data);
     } catch (err) {
       console.error(err);
@@ -57,16 +55,19 @@ const Main = () => {
   }, []);
 
   return (
-    <div className="main_container">
-      <h1 className="main_title">Here is a little pick-me-up!!</h1>
-      <div>
+    <div className="main-container">
+      {/* <h1 className="main-title">Here is a little pick-me-up!!</h1> */}
+
+      <div className="animal-quote-container">
         <CuteAnimals
           allAnimalPics={allAnimalPics}
           setAllAnimalPics={setAllAnimalPics}
           randomAnimalPicNum={randomAnimalPicNum}
         />
         <Quote randomQuoteNum={randomQuoteNum} quoteArray={quoteArray} />
+        <div></div>
         <button
+          className="main-button"
           onClick={() => {
             quoteRandomNumberGenerator();
             animalRandomNumberGenerator();
