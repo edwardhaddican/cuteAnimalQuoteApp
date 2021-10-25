@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
 const CuteAnimals = ({ allAnimalPics, randomAnimalPicNum }) => {
-  const [filteredAnimals, setFilteredAnimals] = useState("");
-  const [currentCategory, setCurrentCategory] = useState("");
 console.log(allAnimalPics[randomAnimalPicNum], 'some pics dont have routes')
   return (
     <div className="cute-animals-main-container">

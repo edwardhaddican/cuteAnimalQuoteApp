@@ -8,12 +8,8 @@ const Main = () => {
   const [quoteArray, setQuoteArray] = useState([]);
   const [randomQuoteNum, setQuoteRandomNum] = useState(0);
   const [randomAnimalPicNum, setRandomAnimalPicNum] = useState(0);
-  // const [backgroundColor, setBackgroundColor] = useState('')
-  const [currentCategory, setCurrentCategory] = useState("");
 
   //https://cute-animals-api.herokuapp.com/api/animals?category=elephants
-
-  //have a button to change background color
 
   async function fetchAllAnimals() {
     try {
