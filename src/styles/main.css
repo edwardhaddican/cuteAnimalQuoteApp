@@ -5,9 +5,10 @@ body {
 
 /* Main*/
 .main_container {
-  width: 80%;
+  /* width: 80%; */
   margin: 0 auto;
   background-color: lightblue;
+  display: inline-block;  /* //just added */
 }
 .main_title {
   color: black;
@@ -31,8 +32,10 @@ body {
 
 /* Quotes*/
 .quote-main-container {
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
+  width: 0;
+  min-width: 100%;
 }
 
 /* SearchBar*/
