@@ -6,9 +6,13 @@ body {
 /* Main*/
 .main-container {
   /* width: 80%; */
-  /* margin: 0 auto; */
+  margin: 1rem 1rem;
   background-color: #30D5C8;
-  margin: 2 4rem;
+  /* margin: 2 4rem;
+   */
+   /* display: inline-block; */
+   display: flex;
+   justify-content: center;
 
 }
 .main-title {
@@ -20,46 +24,39 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 80%;
-  margin: auto;
+  /* width: 80%;
+  margin: auto; */
+  display: inline-block;
   /* background-color: grey; */
 }
 
 .main-button{
-  width: 25%;
+  width: 100%;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
 
-}
-
-.searchbar_container {
-  border: 1px solid black;
-  background-color: white;
-}
-
-.header {
-  margin-left: 1rem;
 }
 
 /* Cute Animals*/
 .cute-animals-main-container {
   display: flex;
   justify-content: center;
-  margin-top: 3rem;
+  /* margin-top: 3rem; */
 }
 
 /* Quotes*/
 .quote-main-container {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   border: 1px black solid;
-  margin: .5rem;
-  padding: .5rem;
   background-color: #3B6064;
   color: #E0ACD5;
   border-radius: 5px;
-  width: 50%;
+  width: 0;
+  min-width: 100%;
+  margin-bottom: .5rem;
 }
 
-/* SearchBar*/
+/* SearchBar
 .searchbar_inner_container {
   display: flex;
   flex-direction: row;
@@ -76,12 +73,17 @@ body {
 .search-button {
   margin-left: 0.5rem;
   cursor: pointer;
-}
+} */
 
 /* Cute Animals */
 
 .imageTag {
-  height: 400px;
+  /* height: 400px; */
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+
+  border-radius: 5px;
 }
 
 /* Side Bar */

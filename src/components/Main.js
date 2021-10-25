@@ -59,13 +59,6 @@ const Main = () => {
       {/* <h1 className="main-title">Here is a little pick-me-up!!</h1> */}
 
       <div className="animal-quote-container">
-        <CuteAnimals
-          allAnimalPics={allAnimalPics}
-          setAllAnimalPics={setAllAnimalPics}
-          randomAnimalPicNum={randomAnimalPicNum}
-        />
-        <Quote randomQuoteNum={randomQuoteNum} quoteArray={quoteArray} />
-        <div></div>
         <button
           className="main-button"
           onClick={() => {
@@ -75,6 +68,13 @@ const Main = () => {
         >
           Click Me
         </button>
+        <CuteAnimals
+          allAnimalPics={allAnimalPics}
+          setAllAnimalPics={setAllAnimalPics}
+          randomAnimalPicNum={randomAnimalPicNum}
+        />
+        <Quote randomQuoteNum={randomQuoteNum} quoteArray={quoteArray} />
+        <div></div>
       </div>
     </div>
   );
