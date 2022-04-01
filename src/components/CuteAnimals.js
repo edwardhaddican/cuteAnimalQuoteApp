@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 
 const CuteAnimals = ({ allAnimalPics, randomAnimalPicNum }) => {
-console.log(allAnimalPics[randomAnimalPicNum], 'some pics dont have routes')
   return (
     <div className="cute-animals-main-container">
       <div>
-        {allAnimalPics.length > 0 ? (
+        {randomAnimalPicNum && allAnimalPics.length > 0 ? (
           <img
             className="imageTag"
             src={allAnimalPics[randomAnimalPicNum].imagePath}

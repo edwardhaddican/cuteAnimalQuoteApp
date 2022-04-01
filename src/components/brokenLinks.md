@@ -1,5 +1,0 @@
-https://lh3.googleusercontent.com/proxy/Q2fmuynVQ0WnTKTmYD2hM304kZZ6Ci6Y0cXuyvzEQDmN8yXKxLVk28oe8FbzKkTxqWnYao0EGTGy3IRXvXCtYUX7csYCmDXxUX_kpVmTJn_CqRYhizxRV1W5UX87hVqy0-SKAvtVC0DLtbfo5X_oPWoO2bRl6m13kletJf7qKYue1gaaWu77I06gMOZOyrtA
-
-
- "https://i.ytimg.com/vi/OCGGdJIo6jI/hqdefault.jpg"
-

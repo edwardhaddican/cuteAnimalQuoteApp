@@ -1,13 +1,31 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
-import { NavBar, Quote, CuteAnimals, SideBar } from "./index";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Quote, CuteAnimals } from "./index";
 
 const Main = () => {
   const [allAnimalPics, setAllAnimalPics] = useState([]);
   const [quoteArray, setQuoteArray] = useState([]);
-  const [randomQuoteNum, setQuoteRandomNum] = useState(0);
-  const [randomAnimalPicNum, setRandomAnimalPicNum] = useState(0);
+  const [randomQuoteNum, setQuoteRandomNum] = useState();
+  const [randomAnimalPicNum, setRandomAnimalPicNum] = useState();
+
+  const quoteRandomNumberGenerator = useCallback(() => {
+    let currentNum = Math.floor(Math.random() * quoteArray.length);
+    // setQuoteRandomNum(currentNum);
+    return currentNum;
+  }, [quoteArray]);
+
+  // if (allAnimalPics.length) {
+  //   console.log(allAnimalPics[114].imagePath, "look atindex 114");
+  //   console.log(allAnimalPics[122].imagePath, "look atindex 122");
+  // }
+
+  const animalRandomNumberGenerator = useCallback(() => {
+    let currentNum = Math.floor(Math.random() * allAnimalPics.length);
+    // setRandomAnimalPicNum(currentNum);
+    return currentNum;
+  }, [allAnimalPics]);
+
+  console.log(randomAnimalPicNum, randomQuoteNum);
 
   //https://cute-animals-api.herokuapp.com/api/animals?category=elephants
 
@@ -22,7 +40,7 @@ const Main = () => {
     }
   }
 
-  const getRandomQuote = useCallback(async () => {
+  const fetchAllQuotes = useCallback(async () => {
     try {
       const response = await axios.get("https://type.fit/api/quotes");
       setQuoteArray(response.data);
@@ -31,24 +49,15 @@ const Main = () => {
     }
   }, []);
 
-  const quoteRandomNumberGenerator = useCallback(() => {
-    let currentNum = Math.floor(Math.random() * quoteArray.length);
-    setQuoteRandomNum(currentNum);
-
-    return currentNum;
-  }, [quoteArray]);
-
-  const animalRandomNumberGenerator = useCallback(() => {
-    let currentNum = Math.floor(Math.random() * allAnimalPics.length);
-    setRandomAnimalPicNum(currentNum);
-
-    return currentNum;
-  }, [quoteArray]);
-
   useEffect(() => {
     fetchAllAnimals();
-    getRandomQuote();
+    fetchAllQuotes();
   }, []);
+
+  useEffect(() => {
+    setQuoteRandomNum(quoteRandomNumberGenerator());
+    setRandomAnimalPicNum(animalRandomNumberGenerator());
+  }, [allAnimalPics]);
 
   return (
     <div className="main-container">
@@ -58,19 +67,19 @@ const Main = () => {
         <button
           className="main-button"
           onClick={() => {
-            quoteRandomNumberGenerator();
-            animalRandomNumberGenerator();
+            setQuoteRandomNum(quoteRandomNumberGenerator());
+            setRandomAnimalPicNum(animalRandomNumberGenerator());
           }}
         >
           Click Me
         </button>
+
         <CuteAnimals
           allAnimalPics={allAnimalPics}
           setAllAnimalPics={setAllAnimalPics}
           randomAnimalPicNum={randomAnimalPicNum}
         />
         <Quote randomQuoteNum={randomQuoteNum} quoteArray={quoteArray} />
-        <div></div>
       </div>
     </div>
   );

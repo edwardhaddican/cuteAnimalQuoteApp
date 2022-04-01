@@ -23,7 +23,6 @@ const SearchBar = (props) => {
     setCurrentSearch(event.target.value);
   };
 
-  console.log(currentSearch);
   return (
     <div>
       <form>
