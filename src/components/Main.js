@@ -25,8 +25,6 @@ const Main = () => {
     return currentNum;
   }, [allAnimalPics]);
 
-  console.log(randomAnimalPicNum, randomQuoteNum);
-
   //https://cute-animals-api.herokuapp.com/api/animals?category=elephants
 
   async function fetchAllAnimals() {
@@ -61,25 +59,25 @@ const Main = () => {
 
   return (
     <div className="main-container">
-      {/* <h1 className="main-title">Here is a little pick-me-up!!</h1> */}
+      <div className="main-container-background-img">
+        <div className="animal-quote-container">
+          <button
+            className="main-button"
+            onClick={() => {
+              setQuoteRandomNum(quoteRandomNumberGenerator());
+              setRandomAnimalPicNum(animalRandomNumberGenerator());
+            }}
+          >
+            Click Me
+          </button>
 
-      <div className="animal-quote-container">
-        <button
-          className="main-button"
-          onClick={() => {
-            setQuoteRandomNum(quoteRandomNumberGenerator());
-            setRandomAnimalPicNum(animalRandomNumberGenerator());
-          }}
-        >
-          Click Me
-        </button>
-
-        <CuteAnimals
-          allAnimalPics={allAnimalPics}
-          setAllAnimalPics={setAllAnimalPics}
-          randomAnimalPicNum={randomAnimalPicNum}
-        />
-        <Quote randomQuoteNum={randomQuoteNum} quoteArray={quoteArray} />
+          <CuteAnimals
+            allAnimalPics={allAnimalPics}
+            setAllAnimalPics={setAllAnimalPics}
+            randomAnimalPicNum={randomAnimalPicNum}
+          />
+          <Quote randomQuoteNum={randomQuoteNum} quoteArray={quoteArray} />
+        </div>
       </div>
     </div>
   );
