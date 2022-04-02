@@ -27,8 +27,8 @@
   },
   "devDependencies": {},
   "engines": {
-    "npm": ">=7.0.0",
-    "node": ">=16.0.0"
+    "npm": "6.0.0",
+    "node": "16.14.2"
   },
   "browserslist": {
     "production": [
