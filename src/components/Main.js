@@ -14,11 +14,6 @@ const Main = () => {
     return currentNum;
   }, [quoteArray]);
 
-  // if (allAnimalPics.length) {
-  //   console.log(allAnimalPics[114].imagePath, "look atindex 114");
-  //   console.log(allAnimalPics[122].imagePath, "look atindex 122");
-  // }
-
   const animalRandomNumberGenerator = useCallback(() => {
     let currentNum = Math.floor(Math.random() * allAnimalPics.length);
     // setRandomAnimalPicNum(currentNum);
