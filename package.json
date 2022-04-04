@@ -1,8 +1,8 @@
 {
   "name": "animal-quote-app",
   "version": "1.0.0",
-  "description": "An small pwa for seeing cute animals and inspirational quotes",
-  "main": "index.js",
+  "description": "A small pwa for seeing cute animals and inspirational quotes",
+  "main": "build/index.html",
   "scripts": {
     "start-dev": "NODE_ENV='development' react-scripts start",
     "start": "NODE_ENV='production' npm run build",
