@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A small pwa for seeing cute animals and inspirational quotes",
   "scripts": {
+    "heroku-prebuild": "npm install -g serve",
     "start-dev": "NODE_ENV='development' react-scripts start",
     "start": "serve -s build",
     "build": "react-scripts build"
