@@ -9,13 +9,13 @@ const Main = () => {
   const [randomAnimalPicNum, setRandomAnimalPicNum] = useState();
 
   const quoteRandomNumberGenerator = useCallback(() => {
-    let currentNum = Math.floor(Math.random() * quoteArray.length);
+    let currentNum = Math.floor(Math.random() * quoteArray.length - 1);
     // setQuoteRandomNum(currentNum);
     return currentNum;
   }, [quoteArray]);
 
   const animalRandomNumberGenerator = useCallback(() => {
-    let currentNum = Math.floor(Math.random() * allAnimalPics.length);
+    let currentNum = Math.floor(Math.random() * allAnimalPics.length -1);
     // setRandomAnimalPicNum(currentNum);
     return currentNum;
   }, [allAnimalPics]);
