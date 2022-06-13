@@ -1,4 +1,5 @@
 import React from "react";
+import { Loader } from "./";
 
 const CuteAnimals = ({ allAnimalPics, randomAnimalPicNum }) => {
   return (
@@ -11,7 +12,7 @@ const CuteAnimals = ({ allAnimalPics, randomAnimalPicNum }) => {
             alt="cute animal pictures"
           />
         ) : (
-          <h1>Loading</h1>
+          <Loader />
         )}
       </div>
     </div>

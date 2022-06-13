@@ -1,26 +1,23 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import { Quote, CuteAnimals } from "./index";
+import quoteArrayData from "../data/quotesData";
 
 const Main = () => {
   const [allAnimalPics, setAllAnimalPics] = useState([]);
   const [quoteArray, setQuoteArray] = useState([]);
-  const [randomQuoteNum, setQuoteRandomNum] = useState();
-  const [randomAnimalPicNum, setRandomAnimalPicNum] = useState();
+  const [randomQuoteNum, setQuoteRandomNum] = useState(0);
+  const [randomAnimalPicNum, setRandomAnimalPicNum] = useState(0);
 
   const quoteRandomNumberGenerator = useCallback(() => {
     let currentNum = Math.floor(Math.random() * quoteArray.length - 1);
-    // setQuoteRandomNum(currentNum);
     return currentNum;
   }, [quoteArray]);
 
   const animalRandomNumberGenerator = useCallback(() => {
-    let currentNum = Math.floor(Math.random() * allAnimalPics.length -1);
-    // setRandomAnimalPicNum(currentNum);
+    let currentNum = Math.floor(Math.random() * (allAnimalPics.length - 1));
     return currentNum;
   }, [allAnimalPics]);
-
-  //https://cute-animals-api.herokuapp.com/api/animals?category=elephants
 
   async function fetchAllAnimals() {
     try {
@@ -33,24 +30,17 @@ const Main = () => {
     }
   }
 
-  const fetchAllQuotes = useCallback(async () => {
-    try {
-      const response = await axios.get("https://type.fit/api/quotes");
-      setQuoteArray(response.data);
-    } catch (err) {
-      throw err;
-    }
-  }, []);
-
   useEffect(() => {
     fetchAllAnimals();
-    fetchAllQuotes();
+    setQuoteArray(quoteArrayData);
   }, []);
 
   useEffect(() => {
-    setQuoteRandomNum(quoteRandomNumberGenerator());
-    setRandomAnimalPicNum(animalRandomNumberGenerator());
-  }, [allAnimalPics]);
+    if (allAnimalPics.length > 0) {
+      setQuoteRandomNum(quoteRandomNumberGenerator());
+      setRandomAnimalPicNum(animalRandomNumberGenerator());
+    }
+  }, [allAnimalPics, animalRandomNumberGenerator, quoteRandomNumberGenerator]);
 
   return (
     <div className="main-container">
@@ -65,12 +55,12 @@ const Main = () => {
           >
             Click Me
           </button>
-
           <CuteAnimals
             allAnimalPics={allAnimalPics}
             setAllAnimalPics={setAllAnimalPics}
             randomAnimalPicNum={randomAnimalPicNum}
           />
+
           <Quote randomQuoteNum={randomQuoteNum} quoteArray={quoteArray} />
         </div>
       </div>
